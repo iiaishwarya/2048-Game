@@ -22,17 +22,35 @@ function App() {
   }
 
   useEffect(() => {
-    setGrid(() => [...randonNumberGenerator(grid)]);
-    setGrid(() => [...randonNumberGenerator(grid)]);
+    setGrid([...randonNumberGenerator(grid)]);
+    setGrid([...randonNumberGenerator(grid)]);
     document.addEventListener("keydown", handleKeyDown);
   }, [])
 
+  let colorAndSizes = {
+    0: { backgroundColor: '#CDC1B4', color: '#CDC1B4', textSize: '60px' },
+    2: { backgroundColor: '#EEE4DA', color: '#776E65', textSize: '60px' },
+    4: { backgroundColor: '#EEE1C9', color: '#776E65', textSize: '60px' },
+    8: { backgroundColor: '#F3B27A', color: 'white', textSize: '60px' },
+    16: { backgroundColor: '#F3B27A', color: 'white', textSize: '60px' },
+    32: { backgroundColor: '#F77C5F', color: 'white', textSize: '60px' },
+    64: { backgroundColor: '#F75F3B', color: 'white', textSize: '60px' },
+    128: { backgroundColor: '#EDD073', color: 'white', textSize: '50px' },
+    256: { backgroundColor: '#EDCC62', color: 'white', textSize: '50px' },
+    512: { backgroundColor: '#EDC950', color: 'white', textSize: '50px' },
+    1024: { backgroundColor: '#EDC950', color: 'white', textSize: '40px' },
+    2048: { backgroundColor: '#EDC950', color: 'white', textSize: '40px' },
+
+  }
 
   return (
-    <div className="App">
+    <div className="container">
       <div className='score-container'>
-        <div className='title'>Score</div>
-        <div id="score">0</div>
+        <div>
+          <div className='title'>Score</div>
+          <div id="score">0</div>
+        </div>
+
       </div>
       <div className='result'>
         {
@@ -45,7 +63,8 @@ function App() {
       </div>
       <div className='grid'>
         {grid.flat().map((item, index) => {
-          return <div key={index}>{item}</div>
+          let { color, backgroundColor, textSize } = colorAndSizes[item];
+          return <div key={index} style={{ color, backgroundColor, border: 'None', textSize, fontSize: textSize }}>{item}</div>
         })}
 
       </div>

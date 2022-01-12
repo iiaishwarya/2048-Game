@@ -16,6 +16,7 @@ function randonNumberGenerator(grid) {
         let spot = options[Math.floor(Math.random() * options.length)];
         grid[spot.x][spot.y] = 2;
     }
+
     return grid;
 }
 

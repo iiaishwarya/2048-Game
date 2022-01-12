@@ -5,15 +5,46 @@
 .grid {
   width: 425px;
   height: 425px;
-  background-color: yellow;
+  background-color: #BBADA0;
   display: flex;
   flex-wrap: wrap;
+}
+
+.score-container {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+
+.score-container div {
+  /* height: 50px; */
+  width: 80px;
+  background-color: #CDC1B4;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.title {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #EEE4DA
+}
+
+#score {
+  color: white;
+  font-size: 30px;
 }
 
 .grid div {
   width: 100px;
   height: 100px;
-  /* color: blue; */
+  color: #776E65;
+  background-color: #EEE4DA;
   margin: 2px;
   display: flex;
   justify-content: center;
@@ -21,4 +52,13 @@
   border: 1px solid;
   font-size: 60px;
   font-weight: bold;
+  border-radius: 5px;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
 }
